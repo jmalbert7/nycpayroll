@@ -1,0 +1,13 @@
+{
+	"name": "AzureDataLakeStorage1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Linked Service to data lake that contains the data files",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adlsnycpayrolljessicaa.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDU0MjExMjc3LTU2MzAtNDBBMy1CM0VDLUVFMjREMzZEMEE3RF9kOTM4NjY2MS0zMzllLTQ3ZTUtODRmZS1hZjgxMmFkMTMzOWEiDQp9"
+		}
+	}
+}
