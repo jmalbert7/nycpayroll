@@ -1,0 +1,52 @@
+{
+	"name": "AggregatePipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "AggregateDF",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Dataflow Aggregate Data",
+						"type": "DataFlowReference",
+						"parameters": {
+							"FiscalYear": {
+								"value": "@pipeline().parameters.FiscalYear",
+								"type": "Expression"
+							}
+						}
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "AzureDataLakeStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "adlsnycpayroll-jessica-a/dirstaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"parameters": {
+			"FiscalYear": {
+				"type": "Int"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-01-18T03:33:19Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
